@@ -1,72 +1,109 @@
-# FBD Skill 集合
+# FBD Skill Collection
 
-Claude Code 技能（Skill）集合仓库，包含一系列增强 Claude Code 能力的专用工具包。
+A curated set of [Claude Code](https://claude.ai/code) skills that turn probabilistic AI into reliable, auditable workflows.
 
-## 技能清单
+> 👉 [中文版说明 →](docs/README_CN.md)
 
-| 技能 | 说明 |
-|------|------|
-| [project-compass](project-compass/SKILL.md) | 项目导航仪 — 路由到最适合当前阶段的下一个技能：澄清、构建、调试、审查、阅读、讨论等 |
-| [sop-creator](skill.md) | 确定性状态机 SOP 生成器 — 将概率性 AI 转化为可靠的自动化流水线 |
-| [actor-reader](actor-reader/SKILL.md) | ACTOR 五步阅读框架 — 将 AI 作为阅读教练，深度内化书籍与长文 |
-| [socratic-discuss](socratic-discuss/SKILL.md) | 苏格拉底式讨论伴侣 — 通过结构化对话帮助深度内化知识 |
+## Overview
 
-## 安装
+This repository follows a **Router → Executor** two-layer architecture:
 
-将本仓库克隆到 Claude Code 的 skills 目录：
+```
+project-compass (Router) — identifies the stage and routes to the right skill
+    │
+    ├── sop-creator        — state-machine SOP generator
+    ├── actor-reader       — structured deep reading (ACTOR framework)
+    ├── socratic-discuss   — Socratic discussion partner
+    ├── skill-review       — 7-dimension skill quality auditor
+    ├── postmortem-note    — structured postmortem notes
+    └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
+```
+
+## Skills
+
+| Skill | Description |
+|-------|-------------|
+| [project-compass](project-compass/SKILL.md) | Project navigator — routes to the right next skill for your current stage |
+| [sop-creator](skill.md) | Deterministic state-machine SOP generator — turns probabilistic AI into reliable automation pipelines |
+| [actor-reader](actor-reader/SKILL.md) | ACTOR 5-step reading framework — your AI reading coach for deep internalization |
+| [socratic-discuss](socratic-discuss/SKILL.md) | Socratic discussion companion — structured dialogue for deeper understanding |
+| [skill-review](skill-review/SKILL.md) | Meta-skill auditor — evaluates skills across 7 dimensions with scored reports |
+| [postmortem-note](postmortem-note/SKILL.md) | Structured postmortem notes — turns non-trivial fixes into searchable knowledge |
+
+## Installation
+
+Clone into your Claude Code skills directory:
 
 ```bash
-# 进入 Claude Code skills 目录
 cd ~/.claude/skills
-
-# 克隆仓库
 git clone https://github.com/f22363712-dotcom/fbd-skill.git
+```
 
-# 或使用符号链接（推荐，方便更新）
+Or use a symlink for easier updates:
+
+```bash
 ln -s /path/to/fbd-skill/* .
 ```
 
-## 使用
+On Windows (PowerShell):
 
-在 Claude Code 中通过斜杠命令调用各技能：
+```powershell
+cd $env:USERPROFILE\.claude\skills
+git clone https://github.com/f22363712-dotcom/fbd-skill.git
+# Or create junction links for each skill directory
+New-Item -ItemType Junction -Path .\project-compass -Target D:\path\to\fbd-skill\project-compass
+```
 
-- `/project-compass` — 项目导航，路由到正确技能
-- `/sop-creator` — 生成 SOP 工作流
-- `/actor-reader` — 启动 ACTOR 阅读框架
-- `/socratic-discuss` — 启动苏格拉底式讨论
+## Usage
 
-## 项目结构
+Invoke skills via slash commands in Claude Code:
+
+- `/project-compass` — navigate to the right skill
+- `/sop-creator` — generate an SOP workflow
+- `/actor-reader` — start ACTOR reading framework
+- `/socratic-discuss` — start a Socratic discussion
+- `/skill-review` — review a skill's quality
+- `/postmortem-note` — write a postmortem after a complex fix
+
+## Project Structure
 
 ```
 fbd-skill/
-├── skill.md                   # sop-creator 核心定义
-├── scripts/                   # sop-creator 验证脚本
-├── assets/                    # sop-creator 模板资源
-├── project-compass/           # 项目导航仪
+├── skill.md                   # sop-creator core definition
+├── scripts/                   # sop-creator validation scripts
+├── assets/                    # sop-creator templates
+├── docs/
+│   └── README_CN.md           # Chinese documentation
+├── project-compass/           # Router skill
 │   └── SKILL.md
-├── actor-reader/              # ACTOR 阅读框架
+├── actor-reader/              # ACTOR reading framework
 │   ├── SKILL.md
 │   └── references/
-├── socratic-discuss/          # 苏格拉底讨论伴侣
+├── socratic-discuss/          # Socratic discussion
 │   ├── SKILL.md
 │   └── references/
-├── README.md
-├── ARCHITECTURE.md
-└── CLAUDE.md
+├── skill-review/              # Meta-skill auditor
+│   ├── SKILL.md
+│   └── RUBRIC.md
+├── postmortem-note/           # Postmortem note generator
+│   ├── SKILL.md
+│   └── TEMPLATE.md
+├── README.md                  # This file (English)
+└── ARCHITECTURE.md            # Architecture documentation
 ```
 
-## 架构借鉴而非全部安装
+## Borrow the Architecture, Not Just the Skills
 
-本仓库的 **核心价值在于路由架构和技能设计模式**，而非让您安装所有技能。
+The **real value** of this repository is the **router → executor architecture** and the skill design patterns, not an exhaustive collection you must install fully.
 
-`project-compass` 是一个**路由层**，它指向的下游技能众多（如 `grill-me`、`tdd`、`diagnose`、`code-review` 等）。您可以：
+`project-compass` routes to many downstream skills — some live in this repo, others are external. You can:
 
-- **完整安装** — 克隆仓库并配置所有依赖技能
-- **选择性借鉴** — 仅采用架构理念，根据自身需求实现或替换其中部分技能
-- **二次开发** — 修改 `project-compass/SKILL.md` 的路由表，只保留或替换您需要的路线
+- **Full install** — clone the repo and configure all dependencies
+- **Selective borrowing** — adopt the architecture but swap in your own skills
+- **Custom routing** — edit `project-compass/SKILL.md` to keep only the routes you need
 
-`actor-reader` 和 `socratic-discuss` 两个技能已包含在本仓库中，可以直接使用。
+Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`.
 
-## 许可
+## License
 
 MIT

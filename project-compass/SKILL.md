@@ -47,10 +47,19 @@ Use this decision table:
 **Document & organize:**
 - Needs a requirements doc, project brief, report seed, or structured summary → `to-prd`
 - Has a PRD or design and wants structured dev tasks → `to-issues`
+- Fixed a complex bug and wants a structured postmortem / 复盘笔记 → `postmortem-note`
+
+**Quality & meta:**
+- Wants to audit, review, or improve a Claude Code skill → `skill-review`
+- Wants to prioritize / classify issues, bugs, tasks, or risks → `triage`
 
 **Infra & automation:**
 - Wants long-running autonomous task execution → `autonomous-agent`
 - New or existing repo needs a CLAUDE.md scaffold → `init`
+- Needs a repeatable SOP for a multi-step workflow → `sop-creator`
+
+**Refactor & improve:**
+- Has working code but architecture or design quality needs improvement → `improve-codebase-architecture`
 
 **Security:**
 - Wants a security-focused review of code or design → `security-review`
@@ -67,7 +76,14 @@ If the route may create persistent files, tracker items, repo changes, or extern
 
 If two routes are both plausible, present the top two choices with a one-line tradeoff and let the user choose.
 
-### 4. No-match exit
+### 4. Target skill not found
+
+If the target skill is not installed, say so briefly and offer alternatives:
+> "`[skill-name]` 未安装。要我换一种方式处理，还是先安装它？"
+
+Do not fall through to general conversation silently.
+
+### 5. No-match exit
 
 If the user's intent does not fit any route above, say so briefly and continue the conversation normally. Do not force-fit.
 
@@ -89,6 +105,11 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - "我刚看完 ACTOR 框架的视频，帮我讨论和理解它。" → `socratic-discuss`
 - "帮我用 ACTOR 框架读这篇论文。" → `actor-reader`
 - "我对这个观点不太确定，帮我挑战一下。" → `socratic-discuss`
+- "帮我把这次修复沉淀为复盘笔记。" → `postmortem-note`
+- "审查一下这个 skill 的质量。" → `skill-review`
+- "帮我分类这些 bug 的优先级。" → `triage`
+- "帮我写个多步骤的自动化 SOP。" → `sop-creator`
+- "这段代码能跑但架构太烂了，帮我重构。" → `improve-codebase-architecture`
 
 ## Guardrails
 
