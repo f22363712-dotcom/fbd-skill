@@ -37,11 +37,12 @@ description: Evaluate a Claude Code skill's quality across 7 dimensions: trigger
 | D5 | 环境独立 | 有没有硬编码路径？能否在别人的机器上工作？ | 0.5x |
 | D6 | 失败模式 | 出错了会怎样？有没有覆盖同名文件、空输入等边界？ | 1.0x |
 | D7 | 组合性 | 能不能被其他 skill 调用？有没有清晰的 I/O 边界？ | 0.5x |
+| D8 | 指令可执行性 | 关键行为规则有没有硬停止机制？还是装饰性指令？ | 1.0x |
 
 ### 4. 综合评分
 
 ```
-总分 = (D1×1.5 + D2×1.0 + D3×1.0 + D4×1.0 + D5×0.5 + D6×1.0 + D7×0.5) / 6.5 × 20
+总分 = (D1×1.5 + D2×1.0 + D3×1.0 + D4×1.0 + D5×0.5 + D6×1.0 + D7×0.5 + D8×1.0) / 7.5 × 20
 ```
 
 > 满分 100。权重反映该维度对 skill 可复用性的相对重要性。
@@ -79,6 +80,7 @@ description: Evaluate a Claude Code skill's quality across 7 dimensions: trigger
 | D5 环境独立 | N/5 | 0.5x | N |
 | D6 失败模式 | N/5 | 1.0x | N |
 | D7 组合性 | N/5 | 0.5x | N |
+| D8 指令可执行性 | N/5 | 1.0x | N |
 
 ## 诊断
 
@@ -89,7 +91,7 @@ description: Evaluate a Claude Code skill's quality across 7 dimensions: trigger
 **改进**:
 - [ ] [具体可执行的修改建议]
 
-> 每个 D2-D7 重复同一结构
+> 每个 D2-D8 重复同一结构
 
 ## TOP 3 优先修复
 
