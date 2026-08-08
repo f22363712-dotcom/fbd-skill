@@ -46,7 +46,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ## 各技能架构
 
-> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note
+> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward
 
 ### 0. project-compass（路由层）
 
@@ -129,6 +129,28 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ---
 
+### 6. repo-steward
+
+**定位**：仓库决策复盘技能 — 从项目指令、领域文档、ADR、当前差异和 Git 历史中重建决策链，发现继续与转向/停止信号。
+
+**工作流**：
+
+```
+识别当前决定 → 读取仓库约束 → 最小证据扫描 → 重建决策链 → 正反证据搜索 → 证据卡与下一步
+```
+
+**关键原则**：
+- 安静是默认状态；没有新颖且可行动的证据时不制造输出
+- 只提出会改变下一步的问题
+- 观察不等于行动授权，持久记忆必须写入用户可见的项目文档
+- 不保留宠物人格、情绪施压、独立 UI 或隐藏记忆系统
+
+**关键文件**：
+- `repo-steward/SKILL.md` — 主工作流与安全边界
+- `repo-steward/references/evidence-cards.md` — 发现、异议、问题和复盘卡片格式
+
+---
+
 ### 1. sop-creator
 
 **定位**：元技能 — 用于生成其他 SOP 技能。
@@ -206,7 +228,7 @@ Activate Purpose → Compress → Test → Own → Runbook
 
 ## 跨技能集成
 
-六个技能可以组合使用：
+七个技能可以组合使用：
 
 ```
 project-compass      → 路由导航，识别当前阶段
@@ -215,7 +237,8 @@ project-compass      → 路由导航，识别当前阶段
     ├── actor-reader       → 深度阅读书籍/长文
     ├── socratic-discuss   → 讨论验证理解，挑战观点
     ├── skill-review       → 审查本仓库其他技能的质量
-    └── postmortem-note    → 修复后沉淀复盘笔记
+    ├── postmortem-note    → 修复后沉淀复盘笔记
+    └── repo-steward       → 仓库复盘、决策异议与停止信号
 ```
 
 典型用户旅程：
@@ -223,6 +246,7 @@ project-compass      → 路由导航，识别当前阶段
 2. 读完后 → 调用 `/socratic-discuss` 挑战理解
 3. 或：遇到复杂 bug → `/diagnose` → 修复后 → `/postmortem-note` 沉淀
 4. 或：写了一个新 skill → `/skill-review` 审查质量
+5. 或：项目方向摇摆 → `/repo-steward` 重建决策链并寻找继续/停止信号
 
 ## 多语言文档
 

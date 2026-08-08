@@ -16,6 +16,7 @@ project-compass (路由层) — 识别阶段 → 路由到最佳技能
     ├── socratic-discuss   — 苏格拉底式讨论伴侣
     ├── skill-review       — 七维技能质量审查器
     ├── postmortem-note    — 故障修复复盘笔记生成器
+    ├── repo-steward       — 基于证据的仓库复盘与异议
     └── ...                — 路由到外部技能（grill-me、tdd、diagnose 等）
 ```
 
@@ -29,6 +30,7 @@ project-compass (路由层) — 识别阶段 → 路由到最佳技能
 | [socratic-discuss](socratic-discuss/SKILL.md) | 苏格拉底式讨论伴侣 — 通过结构化对话帮助深度内化知识 |
 | [skill-review](skill-review/SKILL.md) | 元技能审查器 — 七维评分审查技能质量，输出可执行改进建议 |
 | [postmortem-note](postmortem-note/SKILL.md) | 故障修复复盘笔记 — 将非平凡修复沉淀为可检索的知识资产 |
+| [repo-steward](../repo-steward/SKILL.md) | 安静的仓库管家 — 重建决策历史、发现矛盾，只提出会改变行动的问题 |
 
 ## 安装
 
@@ -58,6 +60,7 @@ ln -s /path/to/fbd-skill/* .
 - `/socratic-discuss` — 启动苏格拉底式讨论
 - `/skill-review` — 审查 skill 质量
 - `/postmortem-note` — 复杂修复后写复盘笔记
+- `/repo-steward` — 复盘仓库历史、证据与继续/停止信号
 
 ## 项目结构
 
@@ -82,6 +85,10 @@ fbd-skill/
 ├── postmortem-note/           # 复盘笔记生成器
 │   ├── SKILL.md
 │   └── TEMPLATE.md
+├── repo-steward/              # 基于证据的仓库复盘
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/evidence-cards.md
 ├── README.md                  # 英文说明（GitHub 默认首页）
 └── ARCHITECTURE.md            # 架构文档
 ```
@@ -103,6 +110,7 @@ fbd-skill/
 - `socratic-discuss` — 苏格拉底讨论
 - `skill-review` — 技能审查
 - `postmortem-note` — 复盘笔记
+- `repo-steward` — 仓库复盘与决策异议
 
 ## 许可
 

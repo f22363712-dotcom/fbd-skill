@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Steward"
+  short_description: "Proactive repository review with evidence-led questions"
+  default_prompt: "Use $repo-steward to review this repository, surface decision-relevant evidence, and ask only questions that could change the next action."

@@ -16,6 +16,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
     ├── socratic-discuss   — Socratic discussion partner
     ├── skill-review       — 7-dimension skill quality auditor
     ├── postmortem-note    — structured postmortem notes
+    ├── repo-steward       — evidence-led repository reflection and dissent
     └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
 ```
 
@@ -29,6 +30,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
 | [socratic-discuss](socratic-discuss/SKILL.md) | Socratic discussion companion — structured dialogue for deeper understanding |
 | [skill-review](skill-review/SKILL.md) | Meta-skill auditor — evaluates skills across 7 dimensions with scored reports |
 | [postmortem-note](postmortem-note/SKILL.md) | Structured postmortem notes — turns non-trivial fixes into searchable knowledge |
+| [repo-steward](repo-steward/SKILL.md) | Quiet repository steward — reconstructs decisions, surfaces contradictions, and asks only decision-changing questions |
 
 ## Installation
 
@@ -64,6 +66,7 @@ Invoke skills via slash commands in Claude Code:
 - `/socratic-discuss` — start a Socratic discussion
 - `/skill-review` — review a skill's quality
 - `/postmortem-note` — write a postmortem after a complex fix
+- `/repo-steward` — review repository history, evidence, and stop/continue signals
 
 ## Project Structure
 
@@ -88,6 +91,10 @@ fbd-skill/
 ├── postmortem-note/           # Postmortem note generator
 │   ├── SKILL.md
 │   └── TEMPLATE.md
+├── repo-steward/              # Evidence-led repository reflection
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/evidence-cards.md
 ├── README.md                  # This file (English)
 └── ARCHITECTURE.md            # Architecture documentation
 ```
@@ -102,7 +109,7 @@ The **real value** of this repository is the **router → executor architecture*
 - **Selective borrowing** — adopt the architecture but swap in your own skills
 - **Custom routing** — edit `project-compass/SKILL.md` to keep only the routes you need
 
-Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`.
+Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`, `repo-steward`.
 
 ## License
 
