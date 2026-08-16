@@ -1,7 +1,6 @@
 ---
 name: sop-creator
 description: Generate deterministic state-machine SOPs that transform probabilistic AI into reliable automation pipelines
-version: 1.0.0
 ---
 
 # SOP Creator: VibeCoding Meta-Skill

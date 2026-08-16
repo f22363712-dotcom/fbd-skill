@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "included_skills": [
+    {"name": "project-compass", "source": "project-compass"},
+    {"name": "sop-creator", "source": "sop-creator"},
+    {"name": "actor-reader", "source": "actor-reader"},
+    {"name": "socratic-discuss", "source": "socratic-discuss"},
+    {"name": "skill-review", "source": "skill-review"},
+    {"name": "postmortem-note", "source": "postmortem-note"},
+    {"name": "repo-steward", "source": "repo-steward"}
+  ],
+  "external_route_targets": [
+    "autonomous-agent",
+    "code-review",
+    "diagnose",
+    "grill-me",
+    "grill-with-docs",
+    "improve-codebase-architecture",
+    "init",
+    "prototype",
+    "review",
+    "security-review",
+    "tdd",
+    "to-issues",
+    "to-prd",
+    "triage",
+    "verify"
+  ]
+}
