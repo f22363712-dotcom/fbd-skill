@@ -2,7 +2,7 @@
 
 ## 概述
 
-FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。每个技能是一个自包含的目录，包含 `SKILL.md`（或 `skill.md`）定义文件、可选脚本和参考文档。
+FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。每个技能是一个自包含的目录，包含 `SKILL.md` 定义文件、可选脚本和参考文档。
 
 该集合由两层架构组成：
 
@@ -38,7 +38,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ### SKILL.md 结构
 
-- **YAML 前置元数据**：`name`、`description`、`version`
+- **YAML 前置元数据**：`name`、`description`
 - **核心理念**：技能的设计哲学
 - **工作流**：步骤化的执行流程
 - **行为约束**：全局约束、FORBIDDEN/REQUIRED 规则
@@ -71,6 +71,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 | 需要分解任务 | `to-issues` |
 | 复盘沉淀 | `postmortem-note` |
 | 审查技能质量 | `skill-review` |
+| 重建仓库决策、检查继续或停止信号 | `repo-steward` |
 | 安全审查 | `security-review` |
 | 深度阅读 | `actor-reader` |
 | 讨论内化 | `socratic-discuss` |
@@ -85,15 +86,11 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ---
 
-**定位**：元技能 — 用于生成其他 SOP 技能。
-
----
-
 ### 4. skill-review
 
-**定位**：元技能审查器 — 用七维评分体系评估 Claude Code skill 的质量。
+**定位**：元技能审查器 — 用八维评分体系评估 Claude Code skill 的质量。
 
-**七维评分体系**：
+**八维评分体系**：
 
 | 维度 | 权重 | 核心问题 |
 |------|------|---------|
@@ -104,6 +101,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 | D5 环境独立 | 0.5x | 有没有硬编码路径？能否跨机器工作？ |
 | D6 失败模式 | 1.0x | 出错了会怎样？覆盖了边界情况吗？ |
 | D7 组合性 | 0.5x | 能不能被其他 skill 调用？ |
+| D8 指令可执行性 | 1.0x | 关键行为能否通过停止点、自检或脚本得到约束？ |
 
 **评级**：🟢 生产级(85-100) / 🟡 可用(70-84) / 🟠 需重视(50-69) / 🔴 不建议(<50)
 
@@ -164,16 +162,16 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 - 结构化 I/O（类型化输入/输出）
 
 **关键文件**：
-- `skill.md` — 主定义（4 状态流水线）
-- `scripts/validate_requirements.py` — 需求验证网关
-- `scripts/validate_design.py` — 设计验证网关
-- `scripts/validate_generation.py` — 生成验证网关
-- `scripts/final_validation.sh` — 最终验证网关
-- `assets/gateway-template.py` — 网关脚本模板
-- `assets/gateway-template.sh` — Shell 网关模板
-- `assets/state-machine-sop.md` — SOP Markdown 模板
-- `references/vibecoding-principles.md` — VibeCoding 原则
-- `references/engineering-gateways.md` — 网关工程指南
+- `sop-creator/SKILL.md` — 主定义（4 状态流水线）
+- `sop-creator/scripts/validate_requirements.py` — 需求验证网关
+- `sop-creator/scripts/validate_design.py` — 设计验证网关
+- `sop-creator/scripts/validate_generation.py` — 生成验证网关
+- `sop-creator/scripts/final_validation.sh` — 最终验证网关
+- `sop-creator/assets/gateway-template.py` — 网关脚本模板
+- `sop-creator/assets/gateway-template.sh` — Shell 网关模板
+- `sop-creator/assets/state-machine-sop.md` — SOP Markdown 模板
+- `sop-creator/references/vibecoding-principles.md` — VibeCoding 原则
+- `sop-creator/references/engineering-gateways.md` — 网关工程指南
 
 ---
 
@@ -255,6 +253,7 @@ project-compass      → 路由导航，识别当前阶段
 
 ## 版本历史
 
+- **1.3.0** — 接通 repo-steward 路由；统一技能目录；增加安装器、目录检查和八维文档
 - **1.2.0** — 集成 skill-review、postmortem-note；增加多语言文档
 - **1.1.0** — 集成 project-compass 路由层，形成"路由 → 执行"双层架构
 - **1.0.0** — 初始版本，集成 sop-creator、actor-reader、socratic-discuss 三个技能

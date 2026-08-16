@@ -1,0 +1,26 @@
+[
+  {
+    "request": "I have a product idea but the scope is unclear.",
+    "expected_route": "grill-me"
+  },
+  {
+    "request": "Terms and module boundaries keep drifting in this repository.",
+    "expected_route": "grill-with-docs"
+  },
+  {
+    "request": "This repository has six months of history. Review the evidence and tell me whether to continue.",
+    "expected_route": "repo-steward"
+  },
+  {
+    "request": "The API started returning 500 and I cannot reproduce it reliably.",
+    "expected_route": "diagnose"
+  },
+  {
+    "request": "Audit this Claude Code skill and tell me what to improve.",
+    "expected_route": "skill-review"
+  },
+  {
+    "request": "Help me deeply read and internalize this paper.",
+    "expected_route": "actor-reader"
+  }
+]

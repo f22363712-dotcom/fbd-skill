@@ -1,6 +1,6 @@
 ---
 name: project-compass
-description: Routes any project to the right next workflow: clarification, documented alignment, TDD implementation, PRD synthesis, debugging, prototyping, code review, deep reading, or Socratic discussion. Never limits routing to student/coursework contexts.
+description: "Routes any project to the right next workflow, including clarification, documented alignment, repository decision review, TDD implementation, PRD synthesis, debugging, prototyping, code review, deep reading, and Socratic discussion. Use when the user is unsure what workflow should happen next or explicitly asks for project navigation. Never limits routing to student or coursework contexts."
 ---
 
 # Project Compass
@@ -52,6 +52,7 @@ Use this decision table:
 **Quality & meta:**
 - Wants to audit, review, or improve a Claude Code skill → `skill-review`
 - Wants to prioritize / classify issues, bugs, tasks, or risks → `triage`
+- Wants repository history reconstructed, current direction challenged, contradictions surfaced, or continue/stop signals reviewed → `repo-steward`
 
 **Infra & automation:**
 - Wants long-running autonomous task execution → `autonomous-agent`
@@ -75,6 +76,14 @@ If the route is clear and low-risk, explain the reason in one sentence and invok
 If the route may create persistent files, tracker items, repo changes, or external issue/PR content, pause briefly and explain what will happen before invoking.
 
 If two routes are both plausible, present the top two choices with a one-line tradeoff and let the user choose.
+
+Use this compact handoff format before invoking a target:
+
+```text
+Route: <skill-name>
+Why: <one sentence tied to the user's current stage>
+Next: <invoke now | ask one decision-changing question | install target>
+```
 
 ### 4. Target skill not found
 
@@ -108,6 +117,7 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - "帮我把这次修复沉淀为复盘笔记。" → `postmortem-note`
 - "审查一下这个 skill 的质量。" → `skill-review`
 - "帮我分类这些 bug 的优先级。" → `triage`
+- "这个仓库做了半年，我想根据历史证据判断还要不要继续。" → `repo-steward`
 - "帮我写个多步骤的自动化 SOP。" → `sop-creator`
 - "这段代码能跑但架构太烂了，帮我重构。" → `improve-codebase-architecture`
 
@@ -119,3 +129,9 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - Do not assume the project is student/coursework — treat all projects equally.
 - Never reject a route because the project is not a student project.
 - Never infer project type from the user's saved profile; infer it only from the current request and visible project context.
+
+## Completion check
+
+Before handing off, verify that exactly one primary route is named, the reason refers to the current request, the target is available or its absence is reported, and no downstream work was silently performed by the router.
+
+When changing this routing table, use `references/route-cases.json` as the small regression set. Do not load it during ordinary routing.

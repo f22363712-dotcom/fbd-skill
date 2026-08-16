@@ -1,6 +1,6 @@
 ---
 name: skill-review
-description: Evaluate a Claude Code skill's quality across 7 dimensions: trigger precision, progressive disclosure, negative space, output contract, environment independence, failure modes, and composability. Produces a scored report with actionable improvements. Use when the user wants to review, audit, or improve a skill — "/skill-review my-skill", "审查这个skill", "这个skill有什么问题", "帮我改进这个skill".
+description: "Evaluate a Claude Code skill across 8 dimensions: trigger precision, progressive disclosure, negative space, output contract, environment independence, failure modes, composability, and instruction enforceability. Produces a scored report with actionable improvements. Use when the user wants to review, audit, or improve a skill."
 ---
 
 # Skill Review — 元技能审查器
@@ -22,7 +22,7 @@ description: Evaluate a Claude Code skill's quality across 7 dimensions: trigger
 - 所有被 SKILL.md 引用的配套文件（TEMPLATE.md, REFERENCE.md, EXAMPLES.md 等）
 - `scripts/` 下的脚本
 
-### 3. 七维评分
+### 3. 八维评分
 
 每个维度 1-5 分。使用 [RUBRIC.md](RUBRIC.md) 中定义的锚定描述符评分。
 
