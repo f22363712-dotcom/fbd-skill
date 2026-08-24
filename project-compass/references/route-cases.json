@@ -22,5 +22,9 @@
   {
     "request": "Help me deeply read and internalize this paper.",
     "expected_route": "actor-reader"
+  },
+  {
+    "request": "Audit this English X reply for a human, professionally sharp voice before publishing.",
+    "expected_route": "human-elite-english"
   }
 ]

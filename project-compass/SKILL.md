@@ -51,6 +51,7 @@ Use this decision table:
 
 **Quality & meta:**
 - Wants to audit, review, or improve a Claude Code skill → `skill-review`
+- Wants English social or professional copy drafted or audited for human voice, restrained expertise, and publish readiness → `human-elite-english`
 - Wants to prioritize / classify issues, bugs, tasks, or risks → `triage`
 - Wants repository history reconstructed, current direction challenged, contradictions surfaced, or continue/stop signals reviewed → `repo-steward`
 
@@ -116,6 +117,7 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - "我对这个观点不太确定，帮我挑战一下。" → `socratic-discuss`
 - "帮我把这次修复沉淀为复盘笔记。" → `postmortem-note`
 - "审查一下这个 skill 的质量。" → `skill-review`
+- "Make this English X reply sound human and professionally sharp, then test it before publishing." → `human-elite-english`
 - "帮我分类这些 bug 的优先级。" → `triage`
 - "这个仓库做了半年，我想根据历史证据判断还要不要继续。" → `repo-steward`
 - "帮我写个多步骤的自动化 SOP。" → `sop-creator`

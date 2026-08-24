@@ -46,7 +46,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ## 各技能架构
 
-> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward
+> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english
 
 ### 0. project-compass（路由层）
 
@@ -75,6 +75,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 | 安全审查 | `security-review` |
 | 深度阅读 | `actor-reader` |
 | 讨论内化 | `socratic-discuss` |
+| 英文社媒或专业文案真人感、专业度与发布前检查 | `human-elite-english` |
 
 **关键设计原则**：
 - 薄路由层 — 识别后立即交棒，不替代下游技能
@@ -146,6 +147,29 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 **关键文件**：
 - `repo-steward/SKILL.md` — 主工作流与安全边界
 - `repo-steward/references/evidence-cards.md` — 发现、异议、问题和复盘卡片格式
+
+---
+
+### 7. human-elite-english
+
+**定位**：英文社媒与专业文案写作、改稿和发布前风格验收。
+
+**工作流**：
+
+```
+确认形式与说话位置 → 检查材料 → 起草 → 九项风格 TDD → 确定性脚本检查 → 交付
+```
+
+**关键原则**：
+- 真人感来自具体对象、材料和自然推进，不靠俚语或伪造经历
+- 精英感来自克制判断、术语准确和边界意识，不靠密集黑话
+- 九项语义门禁全部通过后才能标记 `style_tdd=PASS`
+- 检查脚本只报告确定性问题，不自动改稿，也不代替事实核验
+
+**关键文件**：
+- `human-elite-english/SKILL.md` — 主工作流与形式约束
+- `human-elite-english/references/tdd-rubric.md` — 九项 TDD 门禁
+- `human-elite-english/scripts/check_english.py` — 确定性风格检查器
 
 ---
 
@@ -226,7 +250,7 @@ Activate Purpose → Compress → Test → Own → Runbook
 
 ## 跨技能集成
 
-七个技能可以组合使用：
+八个技能可以组合使用：
 
 ```
 project-compass      → 路由导航，识别当前阶段

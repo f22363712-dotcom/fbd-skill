@@ -7,7 +7,8 @@
     {"name": "socratic-discuss", "source": "socratic-discuss"},
     {"name": "skill-review", "source": "skill-review"},
     {"name": "postmortem-note", "source": "postmortem-note"},
-    {"name": "repo-steward", "source": "repo-steward"}
+    {"name": "repo-steward", "source": "repo-steward"},
+    {"name": "human-elite-english", "source": "human-elite-english"}
   ],
   "external_route_targets": [
     "autonomous-agent",

@@ -1,0 +1,1 @@
+One nuance: a ±6.1% implied move is a snapshot, so it changes with expiry and timing. Even if all eight closes landed inside the range, that doesn't prove an easy short-vol trade. Entry IV, strikes, spreads and exit timing still decide whether the trade worked.
