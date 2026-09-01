@@ -46,7 +46,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ## 各技能架构
 
-> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english
+> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab
 
 ### 0. project-compass（路由层）
 
@@ -64,6 +64,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 |---------|---------|
 | 想法模糊、范围不清 | `grill-me` |
 | 项目术语混乱 | `grill-with-docs` |
+| 候选技能、方法或项目方向需要与基线做受控比较 | `project-challenge-lab` |
 | 实现功能/修复 bug | `tdd` / `prototype` |
 | 审查 diff/PR | `code-review` / `review` |
 | 硬 bug / 性能回退 | `diagnose` |
@@ -173,6 +174,29 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ---
 
+### 8. project-challenge-lab
+
+**定位**：项目质疑与受控实验技能。先限定证据、基线和采用门槛，再比较候选方法或方向，把有证据的结果拆成可逆的个性化首段制作。
+
+**工作流**：
+
+```
+定义待验证决定 → 建立最小证据包 → 基线与候选对照 → 匿名评审 → 达标后拆首段制作
+```
+
+**关键原则**：
+- 仓库历史与继续/停止判断仍交给 `repo-steward`
+- 候选方法是否增加价值必须与无方法基线比较
+- 结果接近时保留独立发现，不把排名包装成显著优势
+- 只有达到预先声明的门槛且用户已授权，才进入可逆的首段制作
+
+**关键文件**：
+- `project-challenge-lab/SKILL.md` — 决策、实验与行动边界
+- `project-challenge-lab/references/evaluation-rubric.md` — 七项评分锚点和淘汰规则
+- `project-challenge-lab/agents/openai.yaml` — 调用界面元数据
+
+---
+
 ### 1. sop-creator
 
 **定位**：元技能 — 用于生成其他 SOP 技能。
@@ -250,7 +274,7 @@ Activate Purpose → Compress → Test → Own → Runbook
 
 ## 跨技能集成
 
-八个技能可以组合使用：
+九个技能可以组合使用：
 
 ```
 project-compass      → 路由导航，识别当前阶段
@@ -260,7 +284,8 @@ project-compass      → 路由导航，识别当前阶段
     ├── socratic-discuss   → 讨论验证理解，挑战观点
     ├── skill-review       → 审查本仓库其他技能的质量
     ├── postmortem-note    → 修复后沉淀复盘笔记
-    └── repo-steward       → 仓库复盘、决策异议与停止信号
+    ├── repo-steward       → 仓库复盘、决策异议与停止信号
+    └── project-challenge-lab → 候选方法对照实验与个性化首段制作
 ```
 
 典型用户旅程：
@@ -269,6 +294,7 @@ project-compass      → 路由导航，识别当前阶段
 3. 或：遇到复杂 bug → `/diagnose` → 修复后 → `/postmortem-note` 沉淀
 4. 或：写了一个新 skill → `/skill-review` 审查质量
 5. 或：项目方向摇摆 → `/repo-steward` 重建决策链并寻找继续/停止信号
+6. 或：候选技能或方案是否有效尚无证据 → `/project-challenge-lab` 与基线做受控比较
 
 ## 多语言文档
 
@@ -277,6 +303,7 @@ project-compass      → 路由导航，识别当前阶段
 
 ## 版本历史
 
+- **1.4.0** — 新增 project-challenge-lab，并接通受控项目实验路由
 - **1.3.0** — 接通 repo-steward 路由；统一技能目录；增加安装器、目录检查和八维文档
 - **1.2.0** — 集成 skill-review、postmortem-note；增加多语言文档
 - **1.1.0** — 集成 project-compass 路由层，形成"路由 → 执行"双层架构

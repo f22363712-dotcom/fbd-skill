@@ -1,6 +1,6 @@
 ---
 name: project-compass
-description: "Routes any project to the right next workflow, including clarification, documented alignment, repository decision review, TDD implementation, PRD synthesis, debugging, prototyping, code review, deep reading, and Socratic discussion. Use when the user is unsure what workflow should happen next or explicitly asks for project navigation. Never limits routing to student or coursework contexts."
+description: "Routes any project to the right next workflow, including clarification, controlled project experiments, repository decision review, TDD implementation, PRD synthesis, debugging, prototyping, code review, deep reading, and Socratic discussion. Use when the user is unsure what workflow should happen next or explicitly asks for project navigation. Never limits routing to student or coursework contexts."
 ---
 
 # Project Compass
@@ -21,7 +21,7 @@ Keep responses brief and practical. Prefer Chinese when the user is speaking Chi
 
 Ask at most three short questions if the route is not obvious:
 
-- What do you need right now: clarify, implement/fix, debug, review, produce a document, or read/discuss/learn?
+- What do you need right now: clarify, test a direction, implement/fix, debug, review, produce a document, or read/discuss/learn?
 - Is there already a repo or codebase? (skip if the request is reading/learning-related)
 - Is this a one-shot task or an ongoing project?
 
@@ -34,6 +34,9 @@ Use this decision table:
 **Clarify & plan:**
 - Vague idea, unclear scope, unsure what to build → `grill-me`
 - Ongoing repo, repeated confusion about terms, modules, or decisions → `grill-with-docs`
+
+**Challenge & experiment:**
+- Wants to test whether a skill, method, or product direction actually improves the result; compare it with a baseline; or personalize the winner before implementation → `project-challenge-lab`
 
 **Build & fix:**
 - Clear feature or bug, wants reliable implementation or test-first flow → `tdd`
@@ -103,6 +106,8 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 
 - "I want to build a lost-and-found app but the features are messy." → `grill-me`
 - "Our project already has code, but user/order/item terms keep drifting." → `grill-with-docs`
+- "这两个技能到底有没有用？拿当前项目做基线对照，达到门槛再采用。" → `project-challenge-lab`
+- "我有三个产品方向，先做受控实验，再把胜出的方案做成适合我的第一版。" → `project-challenge-lab`
 - "Help me implement login, test first." → `tdd`
 - "I have an idea for a CLI tool, can you quickly hack it together?" → `prototype`
 - "The API keeps returning 500 after that deploy, I can't figure out why." → `diagnose`
@@ -128,6 +133,7 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - Do not answer with a long methodology lecture when a clear route exists.
 - Do not force setup or scaffolding on tiny or one-shot tasks.
 - Do not rewrite the downstream skills; hand off as soon as the route is clear.
+- Route evidence-based repository history and continue/stop review to `repo-steward`; route controlled comparisons of candidate methods or directions to `project-challenge-lab`.
 - Do not assume the project is student/coursework — treat all projects equally.
 - Never reject a route because the project is not a student project.
 - Never infer project type from the user's saved profile; infer it only from the current request and visible project context.

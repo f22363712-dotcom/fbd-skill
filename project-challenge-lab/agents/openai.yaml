@@ -1,0 +1,6 @@
+interface:
+  display_name: "Project Challenge Lab"
+  short_description: "质疑项目，做匿名对照实验，再拆成个性化首个切片"
+  default_prompt: "Use $project-challenge-lab to challenge this project, compare the proposed method with a baseline, and turn the evidence into a safe personalized first slice."
+policy:
+  allow_implicit_invocation: true

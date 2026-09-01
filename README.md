@@ -18,6 +18,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
     ├── postmortem-note    — structured postmortem notes
     ├── repo-steward       — evidence-led repository reflection and dissent
     ├── human-elite-english — human, professionally sharp English with style TDD
+    ├── project-challenge-lab — controlled project experiments and personalized first slices
     └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
 ```
 
@@ -33,6 +34,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
 | [postmortem-note](postmortem-note/SKILL.md) | Structured postmortem notes — turns non-trivial fixes into searchable knowledge |
 | [repo-steward](repo-steward/SKILL.md) | Quiet repository steward — reconstructs decisions, surfaces contradictions, and asks only decision-changing questions |
 | [human-elite-english](human-elite-english/SKILL.md) | English writing and audit workflow — combines human voice, restrained expertise, nine-gate style TDD, and a deterministic checker |
+| [project-challenge-lab](project-challenge-lab/SKILL.md) | Evidence-first project challenger — compares a candidate with a controlled baseline, then turns a supported winner into a personalized first slice |
 
 ## Installation
 
@@ -79,6 +81,7 @@ Invoke skills via slash commands in Claude Code:
 - `/postmortem-note` — write a postmortem after a complex fix
 - `/repo-steward` — review repository history, evidence, and stop/continue signals
 - `/human-elite-english` — draft or audit publish-ready English copy
+- `/project-challenge-lab` — challenge a project direction, run a controlled comparison, and define a supported first slice
 
 ## Project Structure
 
@@ -117,6 +120,10 @@ fbd-skill/
 │   ├── references/tdd-rubric.md
 │   ├── scripts/check_english.py
 │   └── EXAMPLES.md
+├── project-challenge-lab/     # Controlled project experiments
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/evaluation-rubric.md
 ├── README.md                  # This file (English)
 └── ARCHITECTURE.md            # Architecture documentation
 ```
@@ -125,13 +132,13 @@ fbd-skill/
 
 The **real value** of this repository is the **router → executor architecture** and the skill design patterns, not an exhaustive collection you must install fully.
 
-`project-compass` routes to many downstream skills. Eight skills live in this repository and 15 route targets are external. You can:
+`project-compass` routes to many downstream skills. Nine skills live in this repository and 15 route targets are external. You can:
 
-- **Bundled install** — install the eight included skills with the repository installer
+- **Bundled install** — install the nine included skills with the repository installer
 - **Selective borrowing** — adopt the architecture but swap in your own skills
 - **Custom routing** — edit `project-compass/SKILL.md` to keep only the routes you need
 
-Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`, `repo-steward`, `human-elite-english`.
+Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`, `repo-steward`, `human-elite-english`, `project-challenge-lab`.
 
 ## License
 

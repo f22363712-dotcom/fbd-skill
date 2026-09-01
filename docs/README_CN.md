@@ -18,6 +18,7 @@ project-compass (路由层) — 识别阶段 → 路由到最佳技能
     ├── postmortem-note    — 故障修复复盘笔记生成器
     ├── repo-steward       — 基于证据的仓库复盘与异议
     ├── human-elite-english — 真人、克制、专业的英文文案 TDD
+    ├── project-challenge-lab — 项目质疑、受控实验与个性化首段制作
     └── ...                — 路由到外部技能（grill-me、tdd、diagnose 等）
 ```
 
@@ -33,6 +34,7 @@ project-compass (路由层) — 识别阶段 → 路由到最佳技能
 | [postmortem-note](../postmortem-note/SKILL.md) | 故障修复复盘笔记 — 将非平凡修复沉淀为可检索的知识资产 |
 | [repo-steward](../repo-steward/SKILL.md) | 安静的仓库管家 — 重建决策历史、发现矛盾，只提出会改变行动的问题 |
 | [human-elite-english](../human-elite-english/SKILL.md) | 英文文案写作与审核 — 用九项 TDD 和确定性脚本检查真人感、专业判断与发布适配性 |
+| [project-challenge-lab](../project-challenge-lab/SKILL.md) | 项目质疑实验室 — 用基线和匿名评审检验候选方法，再把有证据的结果拆成个性化首段制作 |
 
 ## 安装
 
@@ -71,6 +73,7 @@ python scripts/install_skills.py --skills project-compass,repo-steward
 - `/postmortem-note` — 复杂修复后写复盘笔记
 - `/repo-steward` — 复盘仓库历史、证据与继续/停止信号
 - `/human-elite-english` — 写作或审核可发布的英文文案
+- `/project-challenge-lab` — 质疑项目方向，做受控对照，再决定个性化首段制作
 
 ## 项目结构
 
@@ -109,6 +112,10 @@ fbd-skill/
 │   ├── references/tdd-rubric.md
 │   ├── scripts/check_english.py
 │   └── EXAMPLES.md
+├── project-challenge-lab/     # 项目质疑与受控实验
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/evaluation-rubric.md
 ├── README.md                  # 英文说明（GitHub 默认首页）
 └── ARCHITECTURE.md            # 架构文档
 ```
@@ -117,9 +124,9 @@ fbd-skill/
 
 本仓库的**核心价值在于路由架构和技能设计模式**，而非让您安装所有依赖。
 
-`project-compass` 指向多种下游技能。仓库提供八个技能，另外十五个路由目标需要单独安装。您可以：
+`project-compass` 指向多种下游技能。仓库提供九个技能，另外十五个路由目标需要单独安装。您可以：
 
-- **内置安装** — 用仓库安装器安装八个自带技能
+- **内置安装** — 用仓库安装器安装九个自带技能
 - **选择性借鉴** — 仅采用架构理念，根据自身需求实现或替换其中部分技能
 - **二次开发** — 修改 `project-compass/SKILL.md` 的路由表，只保留或替换您需要的路线
 
@@ -132,6 +139,7 @@ fbd-skill/
 - `postmortem-note` — 复盘笔记
 - `repo-steward` — 仓库复盘与决策异议
 - `human-elite-english` — 英文文案真人感与专业判断 TDD
+- `project-challenge-lab` — 项目质疑、受控实验与个性化首段制作
 
 ## 许可
 

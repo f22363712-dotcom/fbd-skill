@@ -8,6 +8,10 @@
     "expected_route": "grill-with-docs"
   },
   {
+    "request": "Test whether these two skills improve this project against a no-skill baseline, and only adopt a winner if it clears a threshold.",
+    "expected_route": "project-challenge-lab"
+  },
+  {
     "request": "This repository has six months of history. Review the evidence and tell me whether to continue.",
     "expected_route": "repo-steward"
   },
