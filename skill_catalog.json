@@ -10,7 +10,8 @@
     {"name": "repo-steward", "source": "repo-steward"},
     {"name": "human-elite-english", "source": "human-elite-english"},
     {"name": "project-challenge-lab", "source": "project-challenge-lab"},
-    {"name": "gate", "source": "gate"}
+    {"name": "gate", "source": "gate"},
+    {"name": "hackathon-practice", "source": "hackathon-practice"}
   ],
   "external_route_targets": [
     "autonomous-agent",

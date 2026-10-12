@@ -20,6 +20,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
     ├── human-elite-english — human, professionally sharp English with style TDD
     ├── project-challenge-lab — controlled project experiments and personalized first slices
     ├── gate               — agent-output judgment gate: decisions, blast radius, provenance
+    ├── hackathon-practice — online hackathon evidence-delivery operating standard
     └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
 ```
 
@@ -37,6 +38,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
 | [human-elite-english](human-elite-english/SKILL.md) | English writing and audit workflow — combines human voice, restrained expertise, nine-gate style TDD, and a deterministic checker |
 | [project-challenge-lab](project-challenge-lab/SKILL.md) | Evidence-first project challenger — compares a candidate with a controlled baseline, then turns a supported winner into a personalized first slice |
 | [gate](gate/SKILL.md) | Agent-output judgment gate — converts any delivery into a list of decisions a human must actually make, ranks them by blast radius, and reclaims decision provenance |
+| [hackathon-practice](hackathon-practice/SKILL.md) | Online hackathon operating standard — turns event research, topic choice, time gates, continuity, delivery, and retrospectives into evidence-led practice |
 
 ## Installation
 
@@ -84,6 +86,7 @@ Invoke skills via slash commands in Claude Code:
 - `/repo-steward` — review repository history, evidence, and stop/continue signals
 - `/human-elite-english` — draft or audit publish-ready English copy
 - `/project-challenge-lab` — challenge a project direction, run a controlled comparison, and define a supported first slice
+- `/hackathon-practice` — prepare, run, or retrospect an online hackathon with evidence and time gates
 
 ## Project Structure
 
@@ -126,6 +129,9 @@ fbd-skill/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml
 │   └── references/evaluation-rubric.md
+├── hackathon-practice/        # Online hackathon evidence-delivery workflow
+│   ├── SKILL.md
+│   └── references/
 ├── README.md                  # This file (English)
 └── ARCHITECTURE.md            # Architecture documentation
 ```
@@ -136,11 +142,11 @@ The **real value** of this repository is the **router → executor architecture*
 
 `project-compass` routes to many downstream skills. Nine skills live in this repository and 15 route targets are external. You can:
 
-- **Bundled install** — install the nine included skills with the repository installer
+- **Bundled install** — install the eleven included skills with the repository installer
 - **Selective borrowing** — adopt the architecture but swap in your own skills
 - **Custom routing** — edit `project-compass/SKILL.md` to keep only the routes you need
 
-Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`, `repo-steward`, `human-elite-english`, `project-challenge-lab`.
+Skills included in this repo: `project-compass`, `sop-creator`, `actor-reader`, `socratic-discuss`, `skill-review`, `postmortem-note`, `repo-steward`, `human-elite-english`, `project-challenge-lab`, `hackathon-practice`, `gate`.
 
 ## License
 

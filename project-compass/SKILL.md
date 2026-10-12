@@ -35,6 +35,9 @@ Use this decision table:
 - Vague idea, unclear scope, unsure what to build → `grill-me`
 - Ongoing repo, repeated confusion about terms, modules, or decisions → `grill-with-docs`
 
+**Hackathon:**
+- Preparing for, participating in, or retrospecting an online hackathon; event rules, topic choice, time gates, submission, continuity, or AI decision ownership are central → `hackathon-practice`
+
 **Challenge & experiment:**
 - Wants to test whether a skill, method, or product direction actually improves the result; compare it with a baseline; or personalize the winner before implementation → `project-challenge-lab`
 
@@ -129,6 +132,7 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - "帮我分类这些 bug 的优先级。" → `triage`
 - "这个仓库做了半年，我想根据历史证据判断还要不要继续。" → `repo-steward`
 - "帮我写个多步骤的自动化 SOP。" → `sop-creator`
+- "我要参加线上黑客松，帮我控制选题、时间和提交风险。" → `hackathon-practice`
 - "这段代码能跑但架构太烂了，帮我重构。" → `improve-codebase-architecture`
 
 ## Guardrails

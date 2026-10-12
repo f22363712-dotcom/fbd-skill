@@ -46,7 +46,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ## 各技能架构
 
-> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab
+> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab | 9. hackathon-practice
 
 ### 0. project-compass（路由层）
 
@@ -77,6 +77,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 | 深度阅读 | `actor-reader` |
 | 讨论内化 | `socratic-discuss` |
 | 英文社媒或专业文案真人感、专业度与发布前检查 | `human-elite-english` |
+| 线上黑客松准备、执行或复盘 | `hackathon-practice` |
 
 **关键设计原则**：
 - 薄路由层 — 识别后立即交棒，不替代下游技能
@@ -197,6 +198,20 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ---
 
+### 9. hackathon-practice
+
+**定位**：线上黑客松证据交付工作流。它把赛事信息、选题、最高风险验证、时间冻结、断线续作、提交和复盘放进同一套可观察流程。
+
+**关键边界**：它管理比赛过程；`gate` 管单次交付的判断；它不代替用户决定不可逆选题、诚信披露、停止或提交。
+
+**关键文件**：
+- `hackathon-practice/SKILL.md` — 触发条件、硬规则、模式和输出契约
+- `hackathon-practice/references/operating-model.md` — 时间比例、选题门和交付优先级
+- `hackathon-practice/references/continuity-playbook.md` — 断线、用量和官方渠道故障处理
+- `hackathon-practice/references/retro-template.md` — 事实时间线与可迁移规则模板
+
+---
+
 ### 1. sop-creator
 
 **定位**：元技能 — 用于生成其他 SOP 技能。
@@ -274,7 +289,7 @@ Activate Purpose → Compress → Test → Own → Runbook
 
 ## 跨技能集成
 
-九个技能可以组合使用：
+十一个技能可以组合使用：
 
 ```
 project-compass      → 路由导航，识别当前阶段
