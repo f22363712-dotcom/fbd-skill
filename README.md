@@ -19,6 +19,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
     ├── repo-steward       — evidence-led repository reflection and dissent
     ├── human-elite-english — human, professionally sharp English with style TDD
     ├── project-challenge-lab — controlled project experiments and personalized first slices
+    ├── gate               — agent-output judgment gate: decisions, blast radius, provenance
     └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
 ```
 
@@ -35,6 +36,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
 | [repo-steward](repo-steward/SKILL.md) | Quiet repository steward — reconstructs decisions, surfaces contradictions, and asks only decision-changing questions |
 | [human-elite-english](human-elite-english/SKILL.md) | English writing and audit workflow — combines human voice, restrained expertise, nine-gate style TDD, and a deterministic checker |
 | [project-challenge-lab](project-challenge-lab/SKILL.md) | Evidence-first project challenger — compares a candidate with a controlled baseline, then turns a supported winner into a personalized first slice |
+| [gate](gate/SKILL.md) | Agent-output judgment gate — converts any delivery into a list of decisions a human must actually make, ranks them by blast radius, and reclaims decision provenance |
 
 ## Installation
 

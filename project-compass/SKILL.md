@@ -52,6 +52,9 @@ Use this decision table:
 - Has a PRD or design and wants structured dev tasks → `to-issues`
 - Fixed a complex bug and wants a structured postmortem / 复盘笔记 → `postmortem-note`
 
+**Judge & gate:**
+- An agent just delivered code, a diff, docs, an audit, or a plan, and the user needs to decide what to trust, what to disclose, or whether to stop → `gate`
+
 **Quality & meta:**
 - Wants to audit, review, or improve a Claude Code skill → `skill-review`
 - Wants English social or professional copy drafted or audited for human voice, restrained expertise, and publish readiness → `human-elite-english`

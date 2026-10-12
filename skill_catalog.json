@@ -9,7 +9,8 @@
     {"name": "postmortem-note", "source": "postmortem-note"},
     {"name": "repo-steward", "source": "repo-steward"},
     {"name": "human-elite-english", "source": "human-elite-english"},
-    {"name": "project-challenge-lab", "source": "project-challenge-lab"}
+    {"name": "project-challenge-lab", "source": "project-challenge-lab"},
+    {"name": "gate", "source": "gate"}
   ],
   "external_route_targets": [
     "autonomous-agent",
