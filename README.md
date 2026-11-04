@@ -21,6 +21,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
     ├── project-challenge-lab — controlled project experiments and personalized first slices
     ├── gate               — agent-output judgment gate: decisions, blast radius, provenance
     ├── hackathon-practice — online hackathon evidence-delivery operating standard
+    ├── recall-loop        — retrieval practice + spaced repetition + timed mock exams
     └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
 ```
 
@@ -39,6 +40,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
 | [project-challenge-lab](project-challenge-lab/SKILL.md) | Evidence-first project challenger — compares a candidate with a controlled baseline, then turns a supported winner into a personalized first slice |
 | [gate](gate/SKILL.md) | Agent-output judgment gate — converts any delivery into a list of decisions a human must actually make, ranks them by blast radius, and reclaims decision provenance |
 | [hackathon-practice](hackathon-practice/SKILL.md) | Online hackathon operating standard — turns event research, topic choice, time gates, continuity, delivery, and retrospectives into evidence-led practice |
+| [recall-loop](recall-loop/SKILL.md) | Retrieval-practice loop — spaced repetition scheduling, Socratic questioning, and timed mock exams; the AI quizzes, never summarizes |
 
 ## Installation
 

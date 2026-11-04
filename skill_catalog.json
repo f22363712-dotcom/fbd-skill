@@ -11,7 +11,8 @@
     {"name": "human-elite-english", "source": "human-elite-english"},
     {"name": "project-challenge-lab", "source": "project-challenge-lab"},
     {"name": "gate", "source": "gate"},
-    {"name": "hackathon-practice", "source": "hackathon-practice"}
+    {"name": "hackathon-practice", "source": "hackathon-practice"},
+    {"name": "recall-loop", "source": "recall-loop"}
   ],
   "external_route_targets": [
     "autonomous-agent",

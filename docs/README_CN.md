@@ -20,6 +20,7 @@ project-compass (路由层) — 识别阶段 → 路由到最佳技能
     ├── human-elite-english — 真人、克制、专业的英文文案 TDD
     ├── project-challenge-lab — 项目质疑、受控实验与个性化首段制作
     ├── gate               — 交付闸门：决定清单、出局排序与溯源回填
+    ├── recall-loop        — 检索练习 + 间隔重复 + 限时模拟考
     └── ...                — 路由到外部技能（grill-me、tdd、diagnose 等）
 ```
 
@@ -37,6 +38,7 @@ project-compass (路由层) — 识别阶段 → 路由到最佳技能
 | [human-elite-english](../human-elite-english/SKILL.md) | 英文文案写作与审核 — 用九项 TDD 和确定性脚本检查真人感、专业判断与发布适配性 |
 | [project-challenge-lab](../project-challenge-lab/SKILL.md) | 项目质疑实验室 — 用基线和匿名评审检验候选方法，再把有证据的结果拆成个性化首段制作 |
 | [gate](../gate/SKILL.md) | 交付闸门 — 把 agent 的产出翻译成必须由人拍板的决定清单，按出局杀伤力排序，并回收决定的历史来源 |
+| [recall-loop](../recall-loop/SKILL.md) | 检索式学习闭环 — 间隔重复排期、苏格拉底追问与限时模拟考；只出题，绝不生成总结 |
 
 ## 安装
 

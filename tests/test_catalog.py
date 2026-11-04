@@ -10,21 +10,22 @@ class CatalogTests(unittest.TestCase):
     def test_catalog_is_consistent(self):
         self.assertEqual(validate_catalog(), [])
 
-    def test_install_plan_contains_eleven_distinct_skills(self):
+    def test_install_plan_contains_twelve_distinct_skills(self):
         with tempfile.TemporaryDirectory() as directory:
             plan = build_install_plan(Path(directory))
         names = [name for name, _, _ in plan]
-        self.assertEqual(len(names), 11)
+        self.assertEqual(len(names), 12)
         self.assertEqual(len(names), len(set(names)))
         self.assertIn("project-compass", names)
         self.assertIn("repo-steward", names)
         self.assertIn("project-challenge-lab", names)
         self.assertIn("gate", names)
         self.assertIn("hackathon-practice", names)
+        self.assertIn("recall-loop", names)
         for _, source, _ in plan:
             self.assertTrue((source / "SKILL.md").is_file())
 
-    def test_installer_copies_eleven_discoverable_skills(self):
+    def test_installer_copies_twelve_discoverable_skills(self):
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory) / "skills"
             plan = build_install_plan(target)
@@ -46,6 +47,7 @@ class CatalogTests(unittest.TestCase):
                     "project-challenge-lab",
                     "gate",
                     "hackathon-practice",
+                    "recall-loop",
                 ]
             ),
         )

@@ -79,6 +79,9 @@ Use this decision table:
 - Has material (book/article/video/course) and wants structured deep reading → `actor-reader`
 - Has consumed content and wants to discuss, challenge, teach, or connect it → `socratic-discuss`
 
+**Retain & retrieve:**
+- Needs to remember material long-term, wants to be quizzed, reviewed on a schedule, or sit a timed mock exam → `recall-loop`
+
 ### 3. Semi-automatic behavior
 
 If the route is clear and low-risk, explain the reason in one sentence and invoke the target skill.

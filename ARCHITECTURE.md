@@ -46,7 +46,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ## 各技能架构
 
-> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab | 9. hackathon-practice
+> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab | 9. hackathon-practice | 10. recall-loop
 
 ### 0. project-compass（路由层）
 
@@ -78,6 +78,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 | 讨论内化 | `socratic-discuss` |
 | 英文社媒或专业文案真人感、专业度与发布前检查 | `human-elite-english` |
 | 线上黑客松准备、执行或复盘 | `hackathon-practice` |
+| 复习、备考、抽背、模拟考 | `recall-loop` |
 
 **关键设计原则**：
 - 薄路由层 — 识别后立即交棒，不替代下游技能
@@ -209,6 +210,21 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 - `hackathon-practice/references/operating-model.md` — 时间比例、选题门和交付优先级
 - `hackathon-practice/references/continuity-playbook.md` — 断线、用量和官方渠道故障处理
 - `hackathon-practice/references/retro-template.md` — 事实时间线与可迁移规则模板
+
+---
+
+### 10. recall-loop
+
+**定位**：检索式学习闭环。把「看过」变成「调得出」：检索练习（testing effect）+ 间隔重复排期 + 苏格拉底追问 + 限时模拟考。
+
+**关键边界**：它只出题、判定、追问、排期，**绝不生成总结/大纲/笔记**——那是卸载认知。懂不等于会，说出来才算会。理解材料用 `socratic-discuss` / `actor-reader`；长期保持与考前彩排用本技能。
+
+**关键文件**：
+- `recall-loop/SKILL.md` — 六条铁律、四类会话、收尾格式
+- `recall-loop/references/question-design.md` — 六种高杠杆题型与再认反例
+- `recall-loop/references/scheduling.md` — 1→3→7→16→35→75 天阶梯与台账格式
+- `recall-loop/references/exam-simulation.md` — 组卷、开考、批改口径、复盘三问
+- `recall-loop/scripts/due.py` — 从台账计算今日到期卡片
 
 ---
 
