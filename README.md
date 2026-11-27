@@ -22,6 +22,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
     ├── gate               — agent-output judgment gate: decisions, blast radius, provenance
     ├── hackathon-practice — online hackathon evidence-delivery operating standard
     ├── recall-loop        — retrieval practice + spaced repetition + timed mock exams
+    ├── memory-dreaming    — file-system progressive memory + out-of-band Dreaming consolidation
     └── ...                — routes to external skills (grill-me, tdd, diagnose, etc.)
 ```
 
@@ -41,6 +42,7 @@ project-compass (Router) — identifies the stage and routes to the right skill
 | [gate](gate/SKILL.md) | Agent-output judgment gate — converts any delivery into a list of decisions a human must actually make, ranks them by blast radius, and reclaims decision provenance |
 | [hackathon-practice](hackathon-practice/SKILL.md) | Online hackathon operating standard — turns event research, topic choice, time gates, continuity, delivery, and retrospectives into evidence-led practice |
 | [recall-loop](recall-loop/SKILL.md) | Retrieval-practice loop — spaced repetition scheduling, Socratic questioning, and timed mock exams; the AI quizzes, never summarizes |
+| [memory-dreaming](memory-dreaming/SKILL.md) | File-system progressive memory & Dreaming GC — maintains lean on-demand project memory and promotes recurring pitfalls into code gates or skills |
 
 ## Installation
 
@@ -89,6 +91,7 @@ Invoke skills via slash commands in Claude Code:
 - `/human-elite-english` — draft or audit publish-ready English copy
 - `/project-challenge-lab` — challenge a project direction, run a controlled comparison, and define a supported first slice
 - `/hackathon-practice` — prepare, run, or retrospect an online hackathon with evidence and time gates
+- `/memory-dreaming` — initialize project file-system memory or run Dreaming consolidation (prune, merge, promote)
 
 ## Project Structure
 

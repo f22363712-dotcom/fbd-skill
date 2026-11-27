@@ -68,6 +68,7 @@ Use this decision table:
 - Wants long-running autonomous task execution → `autonomous-agent`
 - New or existing repo needs a CLAUDE.md scaffold → `init`
 - Needs a repeatable SOP for a multi-step workflow → `sop-creator`
+- Wants to initialize project file-system progressive memory or run out-of-band Dreaming memory consolidation (prune stale notes, merge, promote pitfalls into code/skills) → `memory-dreaming`
 
 **Refactor & improve:**
 - Has working code but architecture or design quality needs improvement → `improve-codebase-architecture`
@@ -137,6 +138,7 @@ Examples of non-matching requests: tiny one-line edits, asking about tooling unr
 - "帮我写个多步骤的自动化 SOP。" → `sop-creator`
 - "我要参加线上黑客松，帮我控制选题、时间和提交风险。" → `hackathon-practice`
 - "这段代码能跑但架构太烂了，帮我重构。" → `improve-codebase-architecture`
+- "进入 Dreaming 整理一下项目的记忆库，清理过时规则并把高频踩坑晋升成脚本检查。" → `memory-dreaming`
 
 ## Guardrails
 

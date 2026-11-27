@@ -46,7 +46,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 
 ## 各技能架构
 
-> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab | 9. hackathon-practice | 10. recall-loop
+> **技能索引**：0. project-compass | 1. sop-creator | 2. actor-reader | 3. socratic-discuss | 4. skill-review | 5. postmortem-note | 6. repo-steward | 7. human-elite-english | 8. project-challenge-lab | 9. hackathon-practice | 10. recall-loop | 11. memory-dreaming
 
 ### 0. project-compass（路由层）
 
@@ -79,6 +79,7 @@ FBD Skill 集合是运行在 Claude Code 环境中的一组技能（Skill）。�
 | 英文社媒或专业文案真人感、专业度与发布前检查 | `human-elite-english` |
 | 线上黑客松准备、执行或复盘 | `hackathon-practice` |
 | 复习、备考、抽背、模拟考 | `recall-loop` |
+| 初始化项目活记忆、带外 Dreaming 记忆整理与去腐烂 | `memory-dreaming` |
 
 **关键设计原则**：
 - 薄路由层 — 识别后立即交棒，不替代下游技能

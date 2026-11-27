@@ -30,5 +30,9 @@
   {
     "request": "Audit this English X reply for a human, professionally sharp voice before publishing.",
     "expected_route": "human-elite-english"
+  },
+  {
+    "request": "Run Dreaming memory consolidation to prune stale project memory notes and promote recurring pitfalls into tests.",
+    "expected_route": "memory-dreaming"
   }
 ]
